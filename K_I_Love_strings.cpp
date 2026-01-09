@@ -56,32 +56,34 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e6 + 5;
 
-
-int reverse(int n ) {
-    int rev = 0;
-    while(n > 0) {
-        rev  = rev * 10 + n % 10 ;
-        n /=10;
-    }  
-    return rev;
-}
-
 void Sokan_El_Leil()
 {
-    string s;
-    cin >> s;
-    string temp = s;
-    reverse(s.begin() , s.end());
+    string s1, s2;
+    cin >> s1 >> s2;
 
+    int mn = min(s1.size(), s2.size());
+    int mx = max(s1.size(), s2.size());
 
-    if(s == temp) {
-        // cout << s << endl;
-        cout << "YES\n";
-    }else{
-        // cout << reverse(s) << endl;
-        cout << "NO\n";
+    for (int i = 0; i < min(s1.size(), s2.size()); i++)
+    {
+        cout << s1[i] << s2[i];
     }
-    
+
+    if (s1.size() > s2.size())
+    {
+        for (int i = mn; i < mx; i++)
+        {
+            cout << s1[i];
+        }
+    }
+    else if(s1.size() < s2.size())
+    {
+        for (int i = mn; i < mx; i++)
+        {
+            cout << s2[i];
+        }
+    }
+    cout << endl;
 }
 
 int main()
@@ -89,7 +91,7 @@ int main()
     ios;
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         Sokan_El_Leil();

@@ -57,30 +57,11 @@ istream &operator>>(istream &is, vector<T> &v)
 const int MOD = 1e6 + 5;
 
 
-int reverse(int n ) {
-    int rev = 0;
-    while(n > 0) {
-        rev  = rev * 10 + n % 10 ;
-        n /=10;
-    }  
-    return rev;
-}
-
 void Sokan_El_Leil()
 {
     string s;
-    cin >> s;
-    string temp = s;
-    reverse(s.begin() , s.end());
+    getline(cin , s);
 
-
-    if(s == temp) {
-        // cout << s << endl;
-        cout << "YES\n";
-    }else{
-        // cout << reverse(s) << endl;
-        cout << "NO\n";
-    }
     
 }
 
@@ -95,3 +76,7 @@ int main()
         Sokan_El_Leil();
     }
 }
+
+
+
+
