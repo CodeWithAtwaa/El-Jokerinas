@@ -41,8 +41,8 @@ istream &operator>>(istream &is, vector<T> &v)
 #define prl pair<ll, ll>
 
 #define ln "\n";
-#define no cout << "NO\n";
-#define yes cout << "YES\n";
+#define no cout << "No\n";
+#define yes cout << "Yes\n";
 
 #define dd     \
     int n;     \
@@ -55,11 +55,32 @@ istream &operator>>(istream &is, vector<T> &v)
     cin.tie(nullptr);
 
 const int MOD = 1e6 + 5;
-// sort(arr.begin(), arr.end(), [](const color &a, const color &b)
-//      { return a.val < b.val; });
 
 void Sokan_El_Leil()
 {
+    int n, m;
+    cin >> n >> m;
+    vi arr1(n);
+    vi arr2(m);
+
+    ll sum1 = 0, sum2 = 0;
+    for (auto ch : arr1)
+    {
+        sum1 += ch;
+    }
+    for (auto ch : arr2)
+    {
+        sum2 += ch;
+    }
+
+    if (sum1 == sum2)
+    {
+        yes;
+    }
+    else
+    {
+        no;
+    }
 }
 
 int main()

@@ -55,11 +55,21 @@ istream &operator>>(istream &is, vector<T> &v)
     cin.tie(nullptr);
 
 const int MOD = 1e6 + 5;
-// sort(arr.begin(), arr.end(), [](const color &a, const color &b)
-//      { return a.val < b.val; });
+
 
 void Sokan_El_Leil()
 {
+    int n , m ;
+    cin >> n >> m ;
+    int year = 1;
+    n *=3;
+    m *=2;
+    while(n <= m ) {
+        year++;
+        n *=3;
+        m *=2;
+    }
+    cout << year;
 }
 
 int main()
@@ -73,3 +83,7 @@ int main()
         Sokan_El_Leil();
     }
 }
+
+
+
+

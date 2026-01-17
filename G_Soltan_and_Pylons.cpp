@@ -55,11 +55,32 @@ istream &operator>>(istream &is, vector<T> &v)
     cin.tie(nullptr);
 
 const int MOD = 1e6 + 5;
-// sort(arr.begin(), arr.end(), [](const color &a, const color &b)
-//      { return a.val < b.val; });
 
 void Sokan_El_Leil()
 {
+    int n;
+    cin >> n;
+    vi arr(n);
+    cin >> arr;
+
+    ll energy = 0;
+    ll money = 0;
+    ll prev = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        energy += (prev - arr[i]);
+
+        if (energy < 0)
+        {
+            money += -energy;
+            energy = 0;
+        }
+
+        prev = arr[i];
+    }
+
+    cout << money << "\n";
 }
 
 int main()

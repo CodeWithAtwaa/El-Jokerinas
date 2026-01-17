@@ -55,11 +55,12 @@ istream &operator>>(istream &is, vector<T> &v)
     cin.tie(nullptr);
 
 const int MOD = 1e6 + 5;
-// sort(arr.begin(), arr.end(), [](const color &a, const color &b)
-//      { return a.val < b.val; });
+
 
 void Sokan_El_Leil()
 {
+    ll n ;cin >> n ;
+    cout << "palestine\n";
 }
 
 int main()
@@ -73,3 +74,7 @@ int main()
         Sokan_El_Leil();
     }
 }
+
+
+
+

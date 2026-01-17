@@ -60,6 +60,34 @@ const int MOD = 1e6 + 5;
 
 void Sokan_El_Leil()
 {
+    int n;
+    string s;
+    cin >> n >> s;
+
+    ll cntone = 0, cntzero = 0;
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (s[i] == '0')
+            cntzero++;
+        else
+            cntone +=cntzero;
+    }
+
+    if (cntone == 0 || cntone % 2 == 0)
+    {
+        cout << "Bob\n";
+        return;
+    }
+
+    cout << "Alice\n";
+    for (int i = 1; i < n; i++)
+    {
+        if (s[i] == '0' || s[i - 1] == '1')
+        {
+            cout << 2 << "\n";
+            cout << i << " " << i + 1 << "\n";
+        }
+    }
 }
 
 int main()
@@ -67,7 +95,7 @@ int main()
     ios;
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         Sokan_El_Leil();
