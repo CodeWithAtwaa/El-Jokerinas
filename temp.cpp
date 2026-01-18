@@ -54,15 +54,14 @@ istream &operator>>(istream &is, vector<T> &v)
     ios::sync_with_stdio(false); \
     cin.tie(nullptr);
 
-const int MOD = 1e6 + 5;
-// sort(arr.begin(), arr.end(), [](const color &a, const color &b)
-//      { return a.val < b.val; });
+const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
+   
 }
 
-int main()
+int32_t main()
 {
     ios;
 
