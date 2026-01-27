@@ -36,7 +36,7 @@ istream &operator>>(istream &is, vector<T> &v)
 #define ull unsigned long long
 #define ll long long
 #define vi vector<ll>
-#define vvi vector<vi> A
+#define vvi vector<vi>
 #define pri pair<int, int>
 #define prl pair<ll, ll>
 
@@ -58,40 +58,22 @@ const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
-    int n;
-    cin >> n;
+    int n, m;
+    cin >> n >> m;
     vi arr(n);
     cin >> arr;
 
-    int s = 0, d = 0, l = 0, r = n - 1;
-    bool turn = true;
-
-    while (l <= r)
+    int l = 0, ans = 0, cnt = 0;
+    for (int r = 0; r < n; r++)
     {
-        int take;
-        if (arr[l] > arr[r])
+        ans += arr[r];
+        while (ans > m)
         {
-            take = arr[l];
-            l++;
+            ans -=arr[l++];
         }
-        else
-        {
-            take = arr[r];
-            r--;
-        }
-        if (turn)
-        {
-            s += take;
-        }
-        else
-        {
-            d += take;
-        }
-
-        turn = !turn;
+        cnt = max(cnt, r - l + 1);
     }
-
-    cout << s << " " << d << "\n";
+    cout << cnt << "\n";
 }
 
 int32_t main()
