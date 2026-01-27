@@ -32,4 +32,5 @@ I am a dedicated and highly motivated Backend Developer with a strong focus on P
 - jan 24
 - jan 25
 - jan 26
+- jan 27
 - 
