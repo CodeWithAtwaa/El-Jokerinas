@@ -12,29 +12,6 @@ I am a dedicated and highly motivated Backend Developer with a strong focus on P
 
 
 # 💫 MY Progress:
-- jan 7
-- jan 8
-- jan 9
-- jan 10
-- jan 11
-- jan 12
-- jan 13
-- jan 14
-- jan 15
-- jan 16
-- jan 17
-- jan 18
-- jan 19
+- Jan
 
-- jan 21....
-- jan 22
-- jan 23
-- jan 24
-- jan 25
-- jan 26
-- jan 27
-
-- jan  29
-- jan 30
-- jan 31
-- 
+- feb 1
