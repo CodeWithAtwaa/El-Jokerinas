@@ -54,27 +54,35 @@ istream &operator>>(istream &is, vector<T> &v)
     ios::sync_with_stdio(false); \
     cin.tie(nullptr);
 
-const int MOD = 1e6 + 5;
-
+const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
-    int n;
-    cin >> n;
-    for (int i = 1; i <= n; i++)
-    {
-        cout << i << " ";
-    }
+    int n, m;
+    cin >> n >> m;
 
-    cout << endl;
+    vi arr(n), arrm(m);
+    cin >> arr;
+    cin >> arrm;
+
+    ll ans = 0, j = 0;
+    for (int i = 0; i < n; i++)
+    {
+        while (j + 1 < m && abs(arrm[j + 1] - arr[i]) <= abs(arrm[j] - arr[i]))
+        {
+            j++;
+        }
+        ans = max(ans, abs(arrm[j] - arr[i]));
+    }
+    cout << ans << "\n";
 }
 
-int main()
+int32_t main()
 {
     ios;
 
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--)
     {
         Sokan_El_Leil();
