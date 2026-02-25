@@ -54,16 +54,18 @@ istream &operator>>(istream &is, vector<T> &v)
     ios::sync_with_stdio(false); \
     cin.tie(nullptr);
 
-const int MOD = 1e6 + 5;
+const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
-    dd;
-    sort(all(arr));
-    cout << arr[n-1] * n << endl;
+    int n, m, d;
+    cin >> n >> m >> d;
+
+    int mx = d / m + 1;
+    cout << (n + mx - 1) / mx << endl;
 }
 
-int main()
+int32_t main()
 {
     ios;
 
