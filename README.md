@@ -28,3 +28,5 @@ I am a dedicated and highly motivated Backend Developer with a strong focus on P
 - feb 23
 - feb 24
 - feb 25
+- feb 26 End Task Formal language
+- 
