@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// g++ -g -O0 temp.c++ -o temp
-// gdb ./temp
+// g++ -g -O0 tmp.c++ -o tmp
+// gdb ./tmp
 // ctrl + shift + b
 // f5
 
@@ -58,11 +58,34 @@ const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
-    int n, m, d;
-    cin >> n >> m >> d;
-
-    int mx = d / m + 1;
-    cout << (n + mx - 1) / mx << endl;
+    ll n;
+    cin >> n;
+    ll tmp = n;
+    ll k = 1;
+    if (tmp % 2 == 0)
+    {
+        k *= 2;
+        while (tmp % 2 == 0)
+        {
+            tmp /= 2;
+        }
+    }
+    for (ll i = 3; i * i <= tmp; i += 2)
+    {
+        if (tmp % i == 0)
+        {
+            k *= i;
+            while (tmp % i == 0)
+            {
+                tmp /= i;
+            }
+        }
+    }
+    if (tmp > 1)
+    {
+        k *= tmp;
+    }
+    cout << k << "\n";
 }
 
 int32_t main()

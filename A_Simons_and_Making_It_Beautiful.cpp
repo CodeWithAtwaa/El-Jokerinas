@@ -56,88 +56,43 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-bool Recognaizer(string s)
+void Sokan_El_Leil()
 {
-    int state = 0;
-    for (int i = 0; i < s.size(); i++)
+    dd;
+
+    if (n == 1)
     {
-        char ch = s[i];
+        cout << arr[0] << "\n";
+        return;
+    }
 
-        switch (state)
+    int in = 0;
+    rep(i, 0, n)
+    {
+        if (arr[i] == n)
         {
-        case 0:
-            if (ch == 'a')
-            {
-                state = 0;
-            }
-            else if (ch == 'b')
-            {
-                state = 1;
-            }
-            else
-            {
-                return false;
-            }
-            break;
-
-        case 1:
-        case 2:
-            if (ch == 'a' || ch == 'b')
-            {
-                state = 2;
-            }
-            else
-            {
-                return false;
-            }
+            in = i;
             break;
         }
     }
 
-    return state == 1;
-}
+    swap(arr[in], arr[0]);
 
-void Sokan_El_Leil()
-{
-
-    //  aaaaaaaab => accpted
-    //  aabbb => not accepted
-    string s;
-    cout << "PLZ, Enter your string : ";
-    cin >> s;
-
-    if (Recognaizer(s))
-    {
-        cout << "String is accepted\n";
+    for(int i = 0 ; i< n ;i++) {
+        if(i) cout << " "; 
+        cout << arr[i];
     }
-    else
-    {
-        cout << "String is not accepted\n";
-    }
+    cout << "\n";
 }
 
 int32_t main()
 {
-    // ios;
+    ios;
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         Sokan_El_Leil();
     }
 }
-
-/*
-
- case 2:
-            if (ch == 'a' || ch == 'b')
-            {
-                state = 2;
-            }
-            else
-            {
-                return false;
-            }
-            break;
-*/
