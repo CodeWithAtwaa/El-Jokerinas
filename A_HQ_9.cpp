@@ -56,21 +56,23 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
+
 void Sokan_El_Leil()
 {
-    string s;
-    cin >> s;
+    str;
 
-    // 11110111011101
-    if(s.find("0000000") !=string::npos || s.find("11111111") != string::npos) {
-        yes;
-    }else{
-        no;
+    for(auto &it :s) {
+        if(it == 'H' || it == 'Q' || it =='9') {
+            yes;
+            return;
+        }
     }
+    no;
 }
 
 int32_t main()
 {
+    ios;
 
     int t = 1;
     // cin >> t;

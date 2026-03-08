@@ -58,19 +58,22 @@ const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
-    string s;
-    cin >> s;
+    int a, b, c;
+    cin >> a >> b >> c;
 
-    // 11110111011101
-    if(s.find("0000000") !=string::npos || s.find("11111111") != string::npos) {
-        yes;
-    }else{
-        no;
-    }
+    ll f1 = a + b * c;
+    ll f2 = a * (b + c);
+    ll f3 = a * b * c;
+    ll f5 = a + b + c;
+    ll f4 = (a + b) * c;
+
+    ll mx = max(f1, max(f2, max(f3, max(f4 , f5))));
+    cout << mx << "\n";
 }
 
 int32_t main()
 {
+    ios;
 
     int t = 1;
     // cin >> t;
