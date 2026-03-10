@@ -64,7 +64,7 @@ void Sokan_El_Leil()
     for(auto &it :s) {
         it = tolower(it);
     }
-    // cout << s <<"\n";
+    cout << s <<"\n";
 
     if(s == "yes") {
         yes;
