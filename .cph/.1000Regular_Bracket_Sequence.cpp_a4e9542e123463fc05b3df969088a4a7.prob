@@ -1,0 +1,1 @@
+{"name":"Local: 1000Regular_Bracket_Sequence","url":"/home/atwaa/ElJokrians/1000Regular_Bracket_Sequence.cpp","tests":[{"id":1773952124186,"input":"5\n()\n(?)\n(??)\n??()\n)?(?","output":"YES\nNO\nYES\nYES\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/atwaa/ElJokrians/1000Regular_Bracket_Sequence.cpp","group":"local","local":true}
