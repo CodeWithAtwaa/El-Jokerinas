@@ -66,7 +66,7 @@ void Sokan_El_Leil()
     int cntZero = 0, mx = 0;
     for (int i = 0; i < n; i++)
     {
-        if (arr[i] == '0')
+        if (arr[i] == 0)
         {
             cntZero++;
             mx = max(mx, cntZero);
