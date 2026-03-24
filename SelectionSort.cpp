@@ -34,7 +34,7 @@ istream &operator>>(istream &is, vector<T> &v)
 #define PB push_back
 #define MP make_pair
 #define ull unsigned long long
-#define int long long
+#define ll long long
 #define vi vector<ll>
 #define vvi vector<vi>
 #define pri pair<int, int>
@@ -56,10 +56,32 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
+void SelectionSort(vi &arr, int n)
+{
+    rep(i, 0, n)
+    {
+        int min = i;
+        rep(j, i + 1, n)
+        {
+            if (arr[j] < arr[min])
+            {
+                min = j;
+            }
+        }
+        swap(arr[i], arr[min]);
+    }
+
+    cout << arr;
+}
 
 void Sokan_El_Leil()
 {
-    
+    int n;
+    cin >> n;
+    vi arr(n);
+    cin >> arr;
+
+    SelectionSort(arr, n);
 }
 
 int32_t main()

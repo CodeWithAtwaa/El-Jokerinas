@@ -34,7 +34,7 @@ istream &operator>>(istream &is, vector<T> &v)
 #define PB push_back
 #define MP make_pair
 #define ull unsigned long long
-#define int long long
+#define ll long long
 #define vi vector<ll>
 #define vvi vector<vi>
 #define pri pair<int, int>
@@ -56,10 +56,54 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
+void MergeSortedArray(vi &arr1, vi &arr2, int n1, int n2)
+{
+    int nSize = n1 + n2;
+    vi arr3(nSize);
+
+    int indexa = 0, indexb = 0, indexc = 0;
+
+    while (indexa < n1 && indexb < n2)
+    {
+        if (arr1[indexa] < arr2[indexb])
+        {
+            arr3[indexc] = arr1[indexa];
+            indexa++;
+        }
+        else
+        {
+            arr3[indexc] = arr2[indexb];
+            indexb++;
+        }
+        indexc++;
+    }
+
+    while (indexa < n1)
+    {
+        arr3[indexc] = arr1[indexa];
+        indexa++;
+        indexc++;
+    }
+
+    while (indexb < n2)
+    {
+        arr3[indexc] = arr2[indexb];
+        indexb++;
+        indexc++;
+    }
+
+    cout << arr3;
+}
 
 void Sokan_El_Leil()
 {
-    
+    int n1, n2;
+    cin >> n1 >> n2;
+    vi arr1(n1), arr2(n2);
+    cin >> arr1;
+    cin >> arr2;
+
+    MergeSortedArray(arr1, arr2, n1, n2);
 }
 
 int32_t main()
