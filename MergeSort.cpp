@@ -56,54 +56,61 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-void MergeSortedArray(vi &arr1, vi &arr2, int n1, int n2)
+void mergeArray(vi &arr, int l, int mid, int r)
 {
-    int nSize = n1 + n2;
-    vi arr3(nSize);
+    int n1 = mid - l + 1;
+    int n2 = r - mid;
 
-    int indexa = 0, indexb = 0, indexc = 0;
+    vi left(n1), right(n2);
 
-    while (indexa < n1 && indexb < n2)
+    for (int i = 0; i < n1; i++)
+        left[i] = arr[l + i];
+
+    for (int i = 0; i < n2; i++)
+        right[i] = arr[mid + 1 + i];
+
+    int i = 0, j = 0, k = l;
+
+    while (i < n1 && j < n2)
     {
-        if (arr1[indexa] < arr2[indexb])
-        {
-            arr3[indexc] = arr1[indexa];
-            indexa++;
-        }
+        if (left[i] <= right[j])
+            arr[k++] = left[i++];
         else
-        {
-            arr3[indexc] = arr2[indexb];
-            indexb++;
-        }
-        indexc++;
+            arr[k++] = right[j++];
     }
 
-    while (indexa < n1)
-    {
-        arr3[indexc] = arr1[indexa];
-        indexa++;
-        indexc++;
-    }
+    while (i < n1)
+        arr[k++] = left[i++];
 
-    while (indexb < n2)
-    {
-        arr3[indexc] = arr2[indexb];
-        indexb++;
-        indexc++;
-    }
+    while (j < n2)
+        arr[k++] = right[j++];
+}
 
-    cout << arr3;
+// function 2 : merge sort
+void mergeSort(vi &arr, int l, int r)
+{
+    if (l >= r)
+        return;
+
+    int mid = (l + r) / 2;
+
+    mergeSort(arr, l, mid);
+    mergeSort(arr, mid + 1, r);
+
+    mergeArray(arr, l, mid, r);
 }
 
 void Sokan_El_Leil()
 {
-    int n1, n2;
-    cin >> n1 >> n2;
-    vi arr1(n1), arr2(n2);
-    cin >> arr1;
-    cin >> arr2;
+    int n;
+    cin >> n;
 
-    MergeSortedArray(arr1, arr2, n1, n2);
+    vi arr(n);
+    cin >> arr;
+
+    mergeSort(arr, 0, n - 1);
+
+    cout << arr;
 }
 
 int32_t main()
