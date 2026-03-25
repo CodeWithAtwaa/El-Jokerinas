@@ -4,10 +4,6 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________________
                                      Author Atwaa
 ___________________________________________________________________________________________________
-
-Time : O( )
-Space : O( )
-___________________________________________________________________________________________________
 */
 
 #include <bits/stdc++.h>
@@ -48,15 +44,10 @@ istream &operator>>(istream &is, vector<T> &v)
 #define ull unsigned long long
 #define ll long long
 #define int ll
-#define vi vector<ll>
+#define vi vector<int>
 #define vvi vector<vi>
 #define pri pair<int, int>
 #define prl pair<ll, ll>
-// ==================
-// 2D array 
-// vector<vector<int>> arr(rows, vector<int>(cols));
-// vvi arr(n, vi(m));
-// ==================
 
 #define ln "\n";
 #define no cout << "NO\n";
@@ -73,10 +64,36 @@ istream &operator>>(istream &is, vector<T> &v)
     cin.tie(nullptr);
 
 const int MOD = 1e7;
-
+/*
+time: N
+space: N
+*/
 void Sokan_El_Leil()
 {
-    
+    int n;
+    cin >> n;
+    vi arr(n);
+    cin >> arr;
+
+    vi frq(*max_element(all(arr)) + 1, 0);
+    vi indx(*max_element(all(arr)) + 1, 0);
+
+    rep(i, 0, n)
+    {
+        frq[arr[i]]++;
+        indx[arr[i]] = i;
+    } // n
+
+    rep(i, 0, (int)frq.size())
+    {
+        if (frq[i] == 1)
+        {
+            cout << indx[i] + 1 << "\n";
+            return;
+        }
+    } // n + 1
+
+    // n + n +1 = 2n + 1 = n
 }
 
 int32_t main()
@@ -84,7 +101,7 @@ int32_t main()
     ios;
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         Sokan_El_Leil();
