@@ -5,8 +5,8 @@ ________________________________________________________________________________
                                      Author Atwaa
 ___________________________________________________________________________________________________
 
-Time : O( n )
-Space : O( 1 )
+Time : O( )
+Space : O( )
 ___________________________________________________________________________________________________
 */
 
@@ -76,20 +76,40 @@ const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
-    int n; cin >> n;
-    string s;
-    cin >> s;
-    int cnta = 0, cntd = 0;
+    int n;
+    cin >> n;
+    vi arr(n);
+    cin >> arr;
+    sort(all(arr));
 
-    for (auto &it : s)
+    int cnt = 0;
+    map<int, int> mp;
+    for (auto &it : arr)
+        mp[it]++;
+
+    // 2 4 6 7 9
+    // 2 4 3 2 2
+
+    // 3 5
+    // 3 1
+
+    // 1 2
+    // 1 2 1 2 2 2 2 2
+    // 2 6
+
+    for (auto it : mp)
     {
-        if(it== 'A') cnta++;
-        else cntd++;
+        if (it.second >= 2)
+        {
+            while (it.second >= 2)
+            {
+                it.second -= 2;
+                cnt++; // 1
+            }
+        }
     }
 
-    if(cnta > cntd) cout << "Anton\n";
-    else if(cntd >  cnta) cout << "Danik\n";
-    else cout <<"Friendship\n";
+    cout << cnt / 2 << "\n";
 }
 
 int32_t main()
