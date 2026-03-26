@@ -5,8 +5,8 @@ ________________________________________________________________________________
                                      Author Atwaa
 ___________________________________________________________________________________________________
 
-Time : O( n )
-Space : O( 1 )
+Time : O( )
+Space : O( )
 ___________________________________________________________________________________________________
 */
 
@@ -53,7 +53,7 @@ istream &operator>>(istream &is, vector<T> &v)
 #define pri pair<int, int>
 #define prl pair<ll, ll>
 // ==================
-// 2D array
+// 2D array 
 // vector<vector<int>> arr(rows, vector<int>(cols));
 // vvi arr(n, vi(m));
 // ==================
@@ -76,20 +76,7 @@ const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
-    int n; cin >> n;
-    string s;
-    cin >> s;
-    int cnta = 0, cntd = 0;
-
-    for (auto &it : s)
-    {
-        if(it== 'A') cnta++;
-        else cntd++;
-    }
-
-    if(cnta > cntd) cout << "Anton\n";
-    else if(cntd >  cnta) cout << "Danik\n";
-    else cout <<"Friendship\n";
+    
 }
 
 int32_t main()
