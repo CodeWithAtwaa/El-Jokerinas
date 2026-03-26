@@ -53,7 +53,7 @@ istream &operator>>(istream &is, vector<T> &v)
 #define pri pair<int, int>
 #define prl pair<ll, ll>
 // ==================
-// 2D array 
+// 2D array
 // vector<vector<int>> arr(rows, vector<int>(cols));
 // vvi arr(n, vi(m));
 // ==================
@@ -76,7 +76,40 @@ const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
-    
+    int n;
+    cin >> n;
+    vi arr(n);
+    cin >> arr;
+    sort(all(arr));
+
+    int cnt = 0;
+    map<int, int> mp;
+    for (auto &it : arr)
+        mp[it]++;
+
+    // 2 4 6 7 9
+    // 2 4 3 2 2
+
+    // 3 5
+    // 3 1
+
+    // 1 2
+    // 1 2 1 2 2 2 2 2
+    // 2 6
+
+    for (auto it : mp)
+    {
+        if (it.second >= 2)
+        {
+            while (it.second >= 2)
+            {
+                it.second -= 2;
+                cnt++; // 1
+            }
+        }
+    }
+
+    cout << cnt / 2 << "\n";
 }
 
 int32_t main()
