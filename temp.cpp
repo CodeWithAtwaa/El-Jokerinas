@@ -37,21 +37,11 @@ istream &operator>>(istream &is, vector<T> &v)
     return is;
 }
 
-#define str   \
-    string s; \
-    cin >> s;
-
-#define F first
-#define S second
-#define PB push_back
-#define MP make_pair
 #define ull unsigned long long
 #define ll long long
 #define int ll
 #define vi vector<ll>
 #define vvi vector<vi>
-#define pri pair<int, int>
-#define prl pair<ll, ll>
 // ==================
 // 2D array
 // vector<vector<int>> arr(rows, vector<int>(cols));

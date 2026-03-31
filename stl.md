@@ -111,8 +111,10 @@ int main() {
 ```
 
 #### `Built in functions`
-- the vector has many built in  functions.
-```cpp 
+
+- the vector has many built in functions.
+
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -127,7 +129,7 @@ int main() {
     arr.insert(arr.begin() + 5 , 10); // insert from any where
 
     arr.pop_back(); // delete first element
-    arr.erase(arr.begin() + 1); // delete from any where 
+    arr.erase(arr.begin() + 1); // delete from any where
     arr.erase(arr.begin() + 1, arr.begin() + 3);
     arr.clear(); // delete all elements
 
@@ -135,12 +137,12 @@ int main() {
     arr.back(); // print last element
     arr.front(); // print first element
     arr.capacity(); // the size
-    arr.size(); // the size 
-    arr.max_size(); // the max size 
+    arr.size(); // the size
+    arr.max_size(); // the max size
     arr.empty(); // check if empty
 
     arr.reserve(arr.size()); // to reverse
-    arr.begin() ; // iterator 
+    arr.begin() ; // iterator
     arr.end() - 1; // iterator
     arr.at(5); // to access from any where
 }
@@ -148,4 +150,113 @@ int main() {
 
 <hr style="height:4px; border:none; color:#333; background-color:#333;">
 
+## Deque
 
+- double ended queue.
+- like vector and has some property not found in in vector.
+- can add from begin, delete form begin
+
+#### `Difinetion`
+
+```cpp
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+int main() {
+    deque<int> dq;
+    dq.push_back(20); // add from back
+    dq.emplace_back(30);
+    dq.pop_back(); // remove from back
+
+    dq.push_front(50); // add from begin
+    dq.emplace_front(60);
+    dq.pop_front(); // remove form begin
+}
+```
+
+<hr style="height:4px; border:none; color:#333; background-color:#333;">
+
+### Queue
+
+- First in First out (FIFO)
+
+## --------> in (add from end)
+
+## 1 | 2 | 3 | 4 | 5 | 6
+
+<------- out (delete from begin)
+
+#### `Difinetion`
+
+```cpp
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main() {
+    queue<int> q;
+    q.push(10);      // add from end
+    q.push(20);      // add from end
+    q.push(30);      // add from end
+    q.push(40);      // add from end
+    q.emplace(50); // add from end
+
+    cout << q.size() << "\n"; // size
+    q.pop(); //delete from begin
+
+    while (!q.empty()) // loop to print
+    {
+        cout << q.front() << "\n"; // print first element
+        q.pop();
+    }
+}
+```
+
+<hr style="height:4px; border:none; color:#333; background-color:#333;">
+
+### Stack
+
+- Last in First out (LIFO)
+- push from top and delete from top
+
+|  60  | <br>
+|  50  | <br>
+|  40  | <br>
+|  30  | <br>
+|  20  | <br>
+|  10  | <br>
+|------| <br>
+
+#### `Difinetion`
+
+```cpp
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main() {
+    stack<int> s;
+    s.push(10);    // add from start
+    s.push(20);    // add from start
+    s.push(30);    // add from start
+    s.push(40);    // add from start
+    s.push(50);    // add from start
+    s.emplace(60); // add from start
+
+    s.pop();                 // delete from top
+    cout << s.top() << "\n"; // print first element
+    cout << s.size() << "\n"; // size
+
+    while (!s.empty())
+    {
+        cout << s.top() << "\n"; // print first element
+        s.pop();
+    }
+}
+```
+
+<hr style="height:4px; border:none; color:#333; background-color:#333;">
