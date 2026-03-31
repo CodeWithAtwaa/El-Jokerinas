@@ -38,21 +38,11 @@ istream &operator>>(istream &is, vector<T> &v)
     return is;
 }
 
-#define str   \
-    string s; \
-    cin >> s;
-
-#define F first
-#define S second
-#define PB push_back
-#define MP make_pair
 #define ull unsigned long long
 #define ll long long
 #define int ll
 #define vi vector<ll>
 #define vvi vector<vi>
-#define pri pair<int, int>
-#define prl pair<ll, ll>
 
 // ==================
 // 2D array
@@ -76,10 +66,28 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-
+#include <stack>
 void Sokan_El_Leil()
 {
-    
+    stack<int> s;
+    s.push(10);    // add from start
+    s.push(20);    // add from start
+    s.push(30);    // add from start
+    s.push(40);    // add from start
+    s.push(50);    // add from start
+    s.emplace(60); // add from start
+
+    s.pop();                 // delete from top
+    cout << s.top() << "\n"; // print first element
+    cout << s.size() << "\n"; // size
+
+    while (!s.empty())
+    {
+        cout << s.top() << "\n"; // print first element
+        s.pop();
+    }
+
+
 }
 
 int32_t main()
