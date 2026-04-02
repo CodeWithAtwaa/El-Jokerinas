@@ -1,5 +1,16 @@
 # Data Structure
 
+`Note`
+
+```cpp
+int main() {
+    cin >> n ;
+    cin.ignore(); // to avoid space from enter
+    string s;
+    getline(cin , s); // to read long text 
+}
+```
+
 > ## `To Learn Data structure`
 
 - When ? Why?
@@ -222,15 +233,14 @@ int main() {
 - Last in First out (LIFO)
 - push from top and delete from top
 
-|------| <==> |  60  | <br>
-|------| <==> |  50  | <br>
-|------| <==> |  40  | <br>
-|------| <==> |  30  | <br>
-|------| <==> |  20  | <br>
-|------| <==> |  10  | <br>
+|------| <==> | 60 | <br>
+|------| <==> | 50 | <br>
+|------| <==> | 40 | <br>
+|------| <==> | 30 | <br>
+|------| <==> | 20 | <br>
+|------| <==> | 10 | <br>
 |------| <==> |------| <br>
 
- 
 #### `Difinetion`
 
 ```cpp
@@ -261,3 +271,4 @@ int main() {
 ```
 
 <hr style="height:4px; border:none; color:#333; background-color:#333;">
+
