@@ -2,29 +2,18 @@
 
 # 💫 About Me:
 I am a dedicated and highly motivated Backend Developer with a strong focus on PHP and Laravel, currently pursuing my third year at the Faculty of Computers and Informatics, Zagazig University (FCI_ZU). Over the past few years, I have developed a deep interest in backend architectures, database systems, and building efficient, scalable web applications.
-.<br>
+.
+<hr style="height:4px; border:none; color:#333; background-color:#333;">
+
 
 #By Mohamed Tamer Atwaa
-.<br>
+.
+<hr style="height:4px; border:none; color:#333; background-color:#333;">
+
 #CS Student in Zagazig UN
-.<br>
+<hr style="height:4px; border:none; color:#333; background-color:#333;">
+
 
 
 #Good Luck...!
 
-
-# 💫 MY Progress:
-- Jan
-- feb 
--  mar 1
--  mar 6
--  mar 7
--  mar 8
--  mar 9
-- mar 10
-- mar 11
-- mar 12
-- mar 14
-- mar 15
-- mar 20
-- mar 21
