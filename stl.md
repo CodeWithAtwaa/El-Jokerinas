@@ -286,7 +286,9 @@ int main() {
 using namespace std;
 
 int main() {
-   priority_queue<int> pq;
+    // priority_queue<T, Container, Compare>
+    
+    priority_queue<int, vector<int>, greater<int>> pq;
     pq.push(100);         // add elements
     pq.push(10);          // add elements
     pq.push(10000);       // add elements
