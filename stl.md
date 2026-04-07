@@ -7,7 +7,7 @@ int main() {
     cin >> n ;
     cin.ignore(); // to avoid space from enter
     string s;
-    getline(cin , s); // to read long text 
+    getline(cin , s); // to read long text
 }
 ```
 
@@ -272,3 +272,44 @@ int main() {
 
 <hr style="height:4px; border:none; color:#333; background-color:#333;">
 
+### Priority Queue
+
+- Has greatest Priority as first elements
+- Time O(LogN)
+
+#### `Difinetion`
+
+```cpp
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main() {
+   priority_queue<int> pq;
+    pq.push(100);         // add elements
+    pq.push(10);          // add elements
+    pq.push(10000);       // add elements
+    pq.push(1000);        // add elements
+    pq.emplace(10000000); // add elements
+
+    cout << pq.top() << "\n";  // print top
+    cout << pq.size() << "\n"; // print size
+    pq.pop();                  // delete
+
+
+    // Loop in PQ
+    while(!pq.empty()) {
+    cout << pq.top() << " ";
+    pq.pop();
+}
+}
+```
+
+| Code                                             | Heap Type                       |
+| ------------------------------------------------ | ------------------------------- |
+| `priority_queue<int>`                            | Max heap                        |
+| `priority_queue<int, vector<int>, greater<int>>` | Min heap                        |
+| `greater_equal<int>`                             | ❌ Not valid for priority_queue |
+
+<hr style="height:4px; border:none; color:#333; background-color:#333;">
