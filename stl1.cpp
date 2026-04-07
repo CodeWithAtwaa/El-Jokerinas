@@ -68,7 +68,17 @@ const int MOD = 1e7;
 
 inline void Sokan_El_Leil()
 {
-    
+    // priority_queue<T, Container, Compare>
+    priority_queue<int, vector<int>, greater_equal<int>> pq;
+    pq.push(100);         // add elements
+    pq.push(10);          // add elements
+    pq.push(10000);       // add elements
+    pq.push(1000);        // add elements
+    pq.emplace(10000000); // add elements
+
+    cout << pq.top() << "\n";  // print top
+    cout << pq.size() << "\n"; // print size
+    pq.pop();                  // delete
 }
 
 int32_t main()
@@ -82,4 +92,3 @@ int32_t main()
         Sokan_El_Leil();
     }
 }
-

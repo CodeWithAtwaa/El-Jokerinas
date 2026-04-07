@@ -64,7 +64,7 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-void Sokan_El_Leil()
+inline void  Sokan_El_Leil()
 {
 }
 
