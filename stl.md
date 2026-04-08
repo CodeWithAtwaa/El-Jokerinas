@@ -1,5 +1,19 @@
 # Data Structure
 
+## 📊 Simple Structure of Data Structures Subject
+```
+Data Structures
+│
+├── Arrays
+├── Linked Lists
+├── Stacks
+├── Queues
+├── Heaps / Priority Queue
+├── Trees
+├── Graphs
+└── Hashing
+```
+
 `Note`
 
 ```cpp
@@ -287,7 +301,7 @@ using namespace std;
 
 int main() {
     // priority_queue<T, Container, Compare>
-    
+
     priority_queue<int, vector<int>, greater<int>> pq;
     pq.push(100);         // add elements
     pq.push(10);          // add elements
