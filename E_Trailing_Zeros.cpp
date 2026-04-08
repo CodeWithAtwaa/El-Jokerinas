@@ -1,3 +1,15 @@
+/*
+___________________________________________________________________________________________________
+                             بِسْمِ اللَّـهِ الرَّحْمَـ ٰنِ الرَّحِيمِ
+___________________________________________________________________________________________________
+                                     Author Atwaa
+___________________________________________________________________________________________________
+
+Time : O( )
+Space : O( )
+___________________________________________________________________________________________________
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,20 +37,16 @@ istream &operator>>(istream &is, vector<T> &v)
     return is;
 }
 
-#define str   \
-    string s; \
-    cin >> s;
-
-#define F first
-#define S second
-#define PB push_back
-#define MP make_pair
 #define ull unsigned long long
 #define ll long long
+#define int ll
 #define vi vector<ll>
 #define vvi vector<vi>
-#define pri pair<int, int>
-#define prl pair<ll, ll>
+// ==================
+// 2D array
+// vector<vector<int>> arr(rows, vector<int>(cols));
+// vvi arr(n, vi(m));
+// ==================
 
 #define ln "\n";
 #define no cout << "NO\n";
@@ -54,17 +62,17 @@ istream &operator>>(istream &is, vector<T> &v)
     ios::sync_with_stdio(false); \
     cin.tie(nullptr);
 
-const ll MOD = 1e9 + 7;
+const int MOD = 1e7;
 
-void Sokan_El_Leil()
+int fib(int n)
 {
-    ll n , ans = 1;
-    cin >> n;
 
-    for (int i = 0; i < n; i++) {
-        ans = (ans * 2) % MOD;
-    }
-    cout << ans << endl;
+}
+
+inline void Sokan_El_Leil()
+{
+    int n;
+    cin >> n;
 }
 
 int32_t main()
