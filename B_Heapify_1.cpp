@@ -64,17 +64,31 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-void Sokan_El_Leil()
+inline void Sokan_El_Leil()
 {
     int n;
     cin >> n;
-    for (int i = 1; i <= n * 3; i++)
+    vi a(n + 1);
+    for(int i=1;i<=n;i++)
     {
-        if (i > 1)
-            cout << " ";
-        cout << i;
+      cin>>a[i];
     }
-    cout << "\n";
+
+    for (int i = 1; i <= n; i += 2)
+    {
+        for (int j = i; j <= n; j *= 2)
+        {
+            for (int k = i * 2; k <= n; k *= 2)
+            {
+                if (a[k / 2] > a[k])
+                    swap(a[k / 2], a[k]);
+            }
+        }
+    }
+    if (is_sorted(begin(a), end(a)))
+        cout << "YES\n";
+    else
+        cout << "NO\n";
 }
 
 int32_t main()
