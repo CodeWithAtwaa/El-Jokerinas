@@ -64,46 +64,60 @@ istream &operator>>(istream &is, vector<T> &v)
     ios::sync_with_stdio(false); \
     cin.tie(nullptr);
 
-const int MOD = 1e7;
-
+const int MAX = 200'007;
+const int MOD = 1'000'000'007;
 inline void Sokan_El_Leil()
 {
     string s;
     cin >> s;
-    int cnta = 0 , coin = 0;
-    while (true)
+    int n = s.length(), cnt = 0;
+    bool all = (s[0] == 'B' || s[n - 1] == 'B');
+    for (int i = 0; i < n - 1; i++)
     {
-        bool a = false;
-        string temp = s;
+        if (s[i] == s[i + 1] && s[i] == 'B')
+        {
+            all = true;
+        }
+    }
+    vector<int> lens;
+    int curr = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (s[i] == 'A')
+        {
+            curr++;
+        }
+        else
+        {
+            if (curr != 0)
+            {
+                lens.push_back(curr);
+            }
+            curr = 0;
+        }
+    }
+    if (curr != 0)
+    {
+        lens.push_back(curr);
+    }
+    sort(lens.begin(), lens.end());
 
-        for (int i = 1; i < s.size(); i++)
-        {
-            // ab
-            if (s[i - 1] == 'A' && s[i] == 'B')
-            {
-                temp[i - 1] = 'B';
-                temp[i] = 'C';
-                coin++;
-                a = true;
-            }
-            else if (s[i - 1] == 'B' && s[i] == 'A')
-            {
-                // ba
-                temp[i - 1] = 'C';
-                temp[i] = 'B';
-                coin++;
-                a = true;
-            }
-            // coin++;
-        }
-        if (!a)
-        {
-            break;
-        }
-        s = temp;
+    if (lens.empty())
+    {
+        cout << 0 << '\n';
+        return;
     }
 
-    cout << coin << "\n";
+    int tot = 0;
+    if (all)
+    {
+        tot += lens[0];
+    }
+    for (int i = 1; i < lens.size(); i++)
+    {
+        tot += lens[i];
+    }
+    cout << tot << '\n';
 }
 
 int32_t main()
