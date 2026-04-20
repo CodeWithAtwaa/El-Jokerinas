@@ -64,30 +64,24 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
+
+
+inline bool cmp(const string& a, const string& b) {
+    return a + b < b + a;
+}
+
 inline void Sokan_El_Leil()
 {
     int n;
     cin >> n;
-
-    vi arr(n);
+    
+    vector<string>arr(n);
     cin >> arr;
+    
+    sort(all(arr), cmp);
+    string ans = accumulate(all(arr), string());
+    puts(ans.c_str());
 
-    // sort(all(arr));
-    int sum = 0;
-    for (int i = 0; i < n; i++)
-    {
-        sum += arr[i];
-    }
-    cout << sum << "\n";
-
-    if (sum % 360 == 0)
-    {
-        cout << "YES\n";
-    }
-    else
-    {
-        cout << "NO\n";
-    }
 }
 
 int32_t main()
@@ -101,3 +95,12 @@ int32_t main()
         Sokan_El_Leil();
     }
 }
+
+/*
+abba
+abacaba
+bcd
+er
+
+abacabaabbabcder
+*/

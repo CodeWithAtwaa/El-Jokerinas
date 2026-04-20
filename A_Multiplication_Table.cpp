@@ -56,21 +56,36 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
+vector<bool> isprime(1000001 + 5, true);
+
+void seive()
+{
+    isprime[0] = isprime[1] = false;
+    for (int i = 2; i * i <= 1000000 + 2; i++)
+    {
+        if (isprime[i])
+        {
+            for (int j = i * i; j <= 1000000 + 2; j += i)
+            {
+                isprime[j] = false;
+            }
+        }
+    }
+}
+
+
 void Sokan_El_Leil()
 {
     ll n, x, cnt = 0;
-    ;
     cin >> n >> x;
 
-    for (ll i = 1; i <= n; i++)
-    {
-        for (ll j = 1; j <= n; j++)
-        {
-            if (i * j == x)
-                cnt++;
+    for (int i = 1; i <= n; i++) {
+        if (x % i == 0 && x / i <= n) {
+            cnt++;
         }
     }
-    cout << cnt << "\n";
+
+        cout << cnt << "\n";
 }
 
 int32_t main()
