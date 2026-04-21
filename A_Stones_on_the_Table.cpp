@@ -64,8 +64,28 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-inline void  Sokan_El_Leil()
+inline void Sokan_El_Leil()
 {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+
+    int cnt = 0, ans = 0;
+    for (int i = 1; i < n; i++)
+    {
+        if (s[i - 1] == s[i])
+        {
+            cnt++;
+            ans = max(ans, cnt);
+        }
+        else
+        {
+            cnt = 0;
+        }
+    }
+
+    cout << ans << "\n";
 }
 
 int32_t main()
