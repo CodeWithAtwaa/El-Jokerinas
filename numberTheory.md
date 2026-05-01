@@ -35,13 +35,13 @@ inline vi getDivisors(int n) // O(sqrt(n))
         if (n % i == 0)
         {
             div.push_back(i);
-                div.push_back(n / i);
+            div.push_back(n / i);
         }
     }
-    if( i == sqrt(n))
-            div.push_back(i);
 
-    sort(all(div));
+    if( i == sqrt(n))
+        div.push_back(i);
+
     return div;
 }
 ```
@@ -51,14 +51,16 @@ inline vi getDivisors(int n) // O(sqrt(n))
 - sqrt(num)
 
 ```cpp
-inline vi getMultiples(int n) // O(sqrt(n))
+inline vector<int> getMultiples(int x, int n) // O(n / x)
 {
-    vi mul;
-    int i = 1;
-    for (; i * i < (n); i++)
-    {
-        mul.push_back(i * n);
-    }
+    if (x <= 0) return {};
+
+    vector<int> mul;
+    mul.reserve(n / x);
+
+    for (int i = x; i <= n; i += x)
+        mul.push_back(i);
+
     return mul;
 }
 ```
@@ -78,9 +80,9 @@ inline bool isPrime(int n) // O(sqrt(n))
     return true;
 }
 
-inline vi getAllPrimes(int n ) { //O(n)
+inline vi getAllPrimes(int n ) { //O(sqrt(n))
     vi primes;
-    for (int i = 2; i <= n; i++) {
+    for (int i = 2; i * i <= n; i++) {
         if (isPrime(i)) {
             primes.push_back(i);
         }
@@ -90,22 +92,31 @@ inline vi getAllPrimes(int n ) { //O(n)
 ```
 
 # Sieve of Eratosthenes
+
 - افترض أن كل الأعداد Prime في البداية ما عدا 0 و 1.
 - نمرّ على الأعداد من 2 إلى √n.
 - إذا كان العدد مازال Prime:
 - نقوم بجعل كل مضاعفاته Not Prime.
+
 ```cpp
-int n;
 vector<bool> isprime;
 
-void sieve() {
+void sieve(int n) { // O(n log log n)
+    isprime.assign(n + 1, true);
     isprime[0] = isprime[1] = false;
-    for (int i = 2; i * i <= n; i++) {
+
+    for (long long i = 2; i * i <= n; i++) {
         if (isprime[i]) {
-            for (int j = i * i; j <= n; j += i) {
+            for (long long j = i * i; j <= n; j += i) {
                 isprime[j] = false;
             }
         }
     }
 }
+```
+
+
+## The fundamentail therom of arithmatic 
+```
+n = p1^e1 * p2^e2 * p3^e3* ...... *px^ex
 ```

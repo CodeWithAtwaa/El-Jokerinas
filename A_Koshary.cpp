@@ -29,7 +29,6 @@ ostream &operator<<(ostream &os, vector<T> &v)
         os << i << ' ';
     return os;
 }
-
 template <typename T>
 istream &operator>>(istream &is, vector<T> &v)
 {
@@ -43,7 +42,6 @@ istream &operator>>(istream &is, vector<T> &v)
 #define int ll
 #define vi vector<ll>
 #define vvi vector<vi>
-
 // ==================
 // 2D array
 // vector<vector<int>> arr(rows, vector<int>(cols));
@@ -66,11 +64,8 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-
-
-inline void Sokan_El_Leil()
+inline void  Sokan_El_Leil()
 {
-
 }
 
 int32_t main()
