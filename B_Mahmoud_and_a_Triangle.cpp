@@ -64,8 +64,26 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-inline void  Sokan_El_Leil()
+inline void Sokan_El_Leil()
 {
+    int n;
+    cin >> n;
+    vi arr(n);
+    cin >> arr;
+
+    sort(all(arr));
+
+    // bool found = false;
+    for (int i = 0; i < n - 2; i++)
+    { // 1 2 3 4 5
+        if (arr[i + 1] + arr[i] > arr[i + 2])
+        {
+            cout << "YES\n";
+            return ;
+        }
+
+    }
+    cout << "NO\n";
 }
 
 int32_t main()
