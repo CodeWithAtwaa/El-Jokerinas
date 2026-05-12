@@ -2,5 +2,6 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "ostream": "cpp"
-    }
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
