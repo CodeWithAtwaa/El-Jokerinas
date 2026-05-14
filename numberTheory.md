@@ -14,8 +14,9 @@
 inline int fixMod(int x, int m)
 {
     x %= m;
-    if (x < 0)
+
     //  لو عاوز تجيب المكافء اجمع عليه الاب .
+    if (x < 0)
         x += m;
     return x;
 }
@@ -115,8 +116,40 @@ void sieve(int n) { // O(n log log n)
 }
 ```
 
+## The fundamentail therom of arithmatic
 
-## The fundamentail therom of arithmatic 
 ```
 n = p1^e1 * p2^e2 * p3^e3* ...... *px^ex
+```
+
+## All prime factorization
+
+```c++
+inline vi getPrimeFactorization(int n)
+{ // Best: O(log n) , worest = O(n)
+    vi res;
+    for (int i = 2; i * i <= n; i++)
+    {
+        while (n % i == 0)
+        {
+            n /= i;
+            res.push_back(i);
+        }
+    }
+    if (n > 1)
+        res.push_back(n);
+
+    return res;
+}
+```
+
+## GCD , LCM
+
+```cpp
+    // GCD
+    cout << gcd(a , b );
+
+    // LCM
+    cout << lcm(a , b );
+    lcm = a * b / gcd(a, b)
 ```

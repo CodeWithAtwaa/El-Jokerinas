@@ -29,7 +29,6 @@ ostream &operator<<(ostream &os, vector<T> &v)
         os << i << ' ';
     return os;
 }
-
 template <typename T>
 istream &operator>>(istream &is, vector<T> &v)
 {
@@ -43,7 +42,6 @@ istream &operator>>(istream &is, vector<T> &v)
 #define int ll
 #define vi vector<ll>
 #define vvi vector<vi>
-
 // ==================
 // 2D array
 // vector<vector<int>> arr(rows, vector<int>(cols));
@@ -66,14 +64,28 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-
-
 inline void Sokan_El_Leil()
 {
-    cout << gcd(24, 36) << "\n";
-    cout << gcd(24, 36 - 24) << "\n";
-    cout << lcm(24, 36) << "\n";
-    cout << 24 * 36 / gcd(24, 36) << "\n";
+    int n, m;
+    cin >> n >> m;
+
+    vi arr(n);
+    cin >> arr;
+    vi arr1(m);
+    cin >> arr1;
+
+    int g = 0;
+    for (int i = 1; i < n; i++)
+    {
+        g = gcd(g, abs(arr[i] - arr[0]));
+    }
+
+    for (int i = 0; i < m; i++)
+    {
+        int ans = gcd(g , arr[0] + arr1[i] );
+        cout << ans << (i == m -1 ? "" : " ");
+    }
+    cout << "\n";
 }
 
 int32_t main()
