@@ -57,17 +57,16 @@ istream &operator>>(istream &is, vector<T> &v)
 const int MOD = 1e7;
 
 ll n, m;
-bool can(ll time, vi &arr)
-{
-    ll total = 0;
-    for (int i = 0; i < n; i++)
-    {
-        total += (time / arr[i]);
-        if (total >= m)
+bool canProduce( vi& t, long long total_time, int target_products) {
+    long long total_products = 0;
+    for (int time_per_product : t) {
+        total_products += (total_time / time_per_product);
+        // إذا وصلنا للمطلوب مبكرًا نقوم بإنهاء الدالة لتوفير الوقت
+        if (total_products >= target_products) {
             return true;
+        }
     }
-
-    return total >= m;
+    return total_products >= target_products;
 }
 void Sokan_El_Leil()
 {
@@ -80,22 +79,26 @@ void Sokan_El_Leil()
 
     while (t--)
     {
-        cin >> m ;
-        ll l = 1, r = 1e10, mid, ans;
-        while (l <= r)
-        {
-            mid = (l + r) / 2;
-            if (can(mid, arr))
-            {
-                ans = mid;
-                r = mid - 1;
-            }
-            else
-            {
-                l = mid + 1;
+         int x;
+        cin >> x;
+
+        // البحث الثنائي على الوقت (Binary Search on Answer)
+        long long low = 0;
+        long long high = 100005; // تم تحديد هذا الحد بناءً على جملة الضمان في المسألة
+        long long answer = high;
+
+        while (low <= high) {
+            long long mid = low + (high - low) / 2;
+
+            if (canProduce(arr, mid, x)) {
+                answer = mid;       // وقت محتمل، نقوم بحفظه
+                high = mid - 1;    // نبحث عن وقت أقل (أفضل)
+            } else {
+                low = mid + 1;     // الوقت غير كافٍ، نحتاج لزيادته
             }
         }
-        cout << ans << "\n";
+
+        cout << answer << "\n";
     }
 }
 
