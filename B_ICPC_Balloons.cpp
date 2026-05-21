@@ -71,24 +71,43 @@ inline void Sokan_El_Leil()
     string s;
     cin >> s;
 
+    // Sol By Array
+    // int cnt = 0;
+    // string temp = "";
+    // for (auto &it : s)
+    // {
+    //     char x = it;
+    //     if (temp.find(x) != string::npos)
+    //     {
+    //         cnt += 1;
+    //         // cout << x << "=>" << cnt << "\n";
+    //     }
+    //     else
+    //     {
+    //         cnt += 2;
+    //         // cout << x << " " << cnt << "\n";
+    //     }
+    //     temp.push_back(x);
+    // }
+
+    // cout << cnt << "\n";
+
+    // Sol By Freq
+
+    map<char, int> mp;
     int cnt = 0;
-    string temp = "";
     for (auto &it : s)
     {
-        char x = it;
-        if (temp.find(x) != string::npos)
+        mp[it]++;
+        if (mp[it] == 1)
         {
-            cnt += 1;
-            // cout << x << "=>" << cnt << "\n";
+            cnt += 2;
         }
         else
         {
-            cnt += 2;
-            // cout << x << " " << cnt << "\n";
+            cnt += 1;
         }
-        temp.push_back(x);
     }
-
     cout << cnt << "\n";
 }
 
