@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============ HEADER SECTION */
+header {
+    background-color: #3c3c3c;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px ;
+    align-items: center;
+}
+
+header > .logo > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+
+header > nav > ul {
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0px 50px;
+}
+
+header > nav > ul > li {
+    list-style: none;
+    margin: 5px;
+    padding: 0 5px;
+}
+
+
+header > nav > ul > li > a {
+    text-decoration: none;  
+    color: white;
+    padding: 10px 20px;
+    background-color: #020100;
+    border-radius:15px ;
+    -webkit-border-radius:15px ;
+    -moz-border-radius:15px ;
+    -ms-border-radius:15px ;
+    -o-border-radius:15px ;
+}
+header > nav > ul > li > a.register {
+    background-color: rgb(31, 1, 59);
+}
+
+header > nav > ul > li > a:hover {
+    background-color:#24495E;
+}
+
+
+/* ============ MAIN */
+
+
+/* ============ HOME SECTION */
+.home {
+    width: 100%;
+    background-image: url(img/castle.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    flex-direction: column;
+}
+
+.home > h1 {
+    font-size: 30px;
+    color: white;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 50px;
+}
+
+.home > article {
+    width: 40%;
+    color: white;
+}
