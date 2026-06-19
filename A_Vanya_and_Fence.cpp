@@ -78,7 +78,7 @@ inline void Sokan_El_Leil()
         if (arr[i] > h) min += 2;
         else min += 1;
     }
-    cout << min << ln;
+    cout << min << endl;
 }
 
 int32_t main()
