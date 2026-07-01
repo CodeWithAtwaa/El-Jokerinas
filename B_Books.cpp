@@ -64,16 +64,20 @@ void Sokan_El_Leil()
     vi arr(n);
     cin >> arr;
 
-    int totalBook = 0, r = -1, ans = 0;
-    for (int l = 0; l < n; totalBook -= arr[l++])
+    int l = 0, r = 0, ans = 0, cnt = 0;
+
+    for (; r < n; r++)
     {
-        while (r + 1 < n && totalBook + arr[r + 1] <= m)
+        ans += arr[r];
+        while (ans > m)
         {
-            totalBook += arr[++r];
+            ans -= arr[l];
+            l++;
         }
-        ans = max(ans, r - l + 1);
+
+        cnt = max(cnt, r - l + 1);
     }
-    cout << ans << "\n";
+    cout << cnt << "\n";
 }
 
 int32_t main()
