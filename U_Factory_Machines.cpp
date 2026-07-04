@@ -64,34 +64,40 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-inline void Sokan_El_Leil()
+int n, t;
+bool can(int mid, vi &a)
 {
-    int n, m;
-    cin >> n >> m;
-    vector<pair<int, int>> arr(n);
+    int sum = 0;
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i].first;
-        arr[i].second = i + 1;
+        sum += (mid / a[i]);
+        if (sum >= t)
+            return true;
     }
+    return sum >= t;
+}
 
-    sort(all(arr));
+inline void Sokan_El_Leil()
+{
+    cin >> n >> t;
+    vi a(n);
+    cin >> a;
 
-    int l = 0, r = n - 1;
-    while (l < r)
+    int l = 1, r = 1e18, ans = 0;
+    while (l <= r)
     {
-        int sum = arr[l].first + arr[r].first;
-        if (sum == m)
+        int mid = l + (r - l) / 2;
+        if (can(mid, a))
         {
-            cout << arr[l].second << " " << arr[r].second << ln;
-            return;
+            ans = mid;
+            r = mid - 1;
         }
-        else if (sum < m)
-            l++;
         else
-            r--;
+        {
+            l = mid + 1;
+        }
     }
-    cout << -1 << "\n";
+    cout << ans << "\n";
 }
 
 int32_t main()
