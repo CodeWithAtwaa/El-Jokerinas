@@ -66,32 +66,26 @@ const int MOD = 1e7;
 
 inline void Sokan_El_Leil()
 {
-    int n, m;
-    cin >> n >> m;
-    vector<pair<int, int>> arr(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i].first;
-        arr[i].second = i + 1;
-    }
+    int n;
+    cin >> n;
 
-    sort(all(arr));
-
-    int l = 0, r = n - 1;
-    while (l < r)
+    vi a(n);
+    cin >> a;
+    int l = 0;
+    int cnt = 1, mx = 1;
+    sort(all(a));
+    for (int r = 0; r < n; r++)
     {
-        int sum = arr[l].first + arr[r].first;
-        if (sum == m)
+        while (abs(a[r] - a[l]) > 5)
         {
-            cout << arr[l].second << " " << arr[r].second << ln;
-            return;
-        }
-        else if (sum < m)
             l++;
-        else
-            r--;
+        }
+        // cnt++;
+        mx = max(mx, r - l + 1);
+        // cout << cnt << "\n";
     }
-    cout << -1 << "\n";
+
+    cout << mx << "\n";
 }
 
 int32_t main()
