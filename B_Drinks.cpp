@@ -64,8 +64,20 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-inline void  Sokan_El_Leil()
+inline void Sokan_El_Leil()
 {
+    int n;
+    cin >> n;
+    vi a(n);
+    cin >> a;
+
+    double sum = 0;
+    for(int i = 0; i < n; i++)
+    {
+        sum += a[i];
+    }
+    double avg = sum / n;
+    cout << fixed << setprecision(12) << avg << ln;
 }
 
 int32_t main()
