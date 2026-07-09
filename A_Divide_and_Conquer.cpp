@@ -68,8 +68,7 @@ inline void Sokan_El_Leil()
 {
     int x, y;
     cin >> x >> y;
-
-    cout << (x % 2 == 0 || y % 2 == 0 ? "YES\n" : "NO\n");
+    cout << (x % y == 0 ? "YES\n" : "NO\n");
 }
 
 int32_t main()
