@@ -66,10 +66,30 @@ const int MOD = 1e7;
 
 inline void Sokan_El_Leil()
 {
-    int x, y;
-    cin >> x >> y;
+    string s;
+    cin >> s;
 
-    cout << (x % 2 == 0 || y % 2 == 0 ? "YES\n" : "NO\n");
+    string res = "";
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] == '.')
+        {
+            res += '0';
+        }
+        else if (s[i] == '-')
+        {
+            if (s[i + 1] == '.')
+            {
+                res += '1';
+            }
+            else
+            {
+                res += '2';
+            }
+            i++;
+        }
+    }
+    cout <<  res << "\n";
 }
 
 int32_t main()
@@ -77,7 +97,7 @@ int32_t main()
     ios;
 
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--)
     {
         Sokan_El_Leil();
