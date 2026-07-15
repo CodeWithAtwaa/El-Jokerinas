@@ -1,0 +1,1 @@
+{"name":"Local: GCD","url":"/home/atwaa/ElJokrians/GCD.cpp","tests":[{"id":1784145848419,"input":"18 24","output":"6"},{"id":1784145877599,"input":"6 18","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/atwaa/ElJokrians/GCD.cpp","group":"local","local":true}
