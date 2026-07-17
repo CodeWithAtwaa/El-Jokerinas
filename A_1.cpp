@@ -56,19 +56,39 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
+int ConvertToBinary(int n)
+{
+    string res = "";
+    while (n > 0)
+    {
+        res = to_string(n % 2) + res;
+        n /= 2;
+    }
+    return stoi(res);
+}
 
 void Sokan_El_Leil()
 {
-    string s;
-    cin >> s;
+    int n;
+    cin >> n;
+    int cnt = 0;
+    // loop over every number to convert it to binary
+    for (int i = 1; i <= n; i++)
+    {
+        int num = ConvertToBinary(i);
 
-    int cnt = 0 ;
-    for(auto ch : s) {
-        if(ch == '0' || ch == '1') {
+        if (num <= n)
+        {
             cnt++;
+            continue;
+        }
+        else
+        {
+            break;
         }
     }
-    cout << cnt <<"\n";
+
+    cout << cnt << "\n";
 }
 
 int32_t main()
