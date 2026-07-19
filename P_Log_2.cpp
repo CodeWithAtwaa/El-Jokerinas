@@ -66,6 +66,11 @@ const int MOD = 1e7;
 
 inline void  Sokan_El_Leil()
 {
+    int n ;
+    cin >> n ;
+
+
+    cout <<(log2(n));
 }
 
 int32_t main()
