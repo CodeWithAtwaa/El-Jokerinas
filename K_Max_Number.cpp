@@ -1,3 +1,15 @@
+/*
+___________________________________________________________________________________________________
+                             بِسْمِ اللَّـهِ الرَّحْمَـ ٰنِ الرَّحِيمِ
+___________________________________________________________________________________________________
+                                     Author Atwaa
+___________________________________________________________________________________________________
+
+Time : O( )
+Space : O( )
+___________________________________________________________________________________________________
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,20 +37,16 @@ istream &operator>>(istream &is, vector<T> &v)
     return is;
 }
 
-#define str   \
-    string s; \
-    cin >> s;
-
-#define F first
-#define S second
-#define PB push_back
-#define MP make_pair
 #define ull unsigned long long
 #define ll long long
+#define int ll
 #define vi vector<ll>
 #define vvi vector<vi>
-#define pri pair<int, int>
-#define prl pair<ll, ll>
+// ==================
+// 2D array
+// vector<vector<int>> arr(rows, vector<int>(cols));
+// vvi arr(n, vi(m));
+// ==================
 
 #define ln "\n";
 #define no cout << "NO\n";
@@ -56,39 +64,25 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-int ConvertToBinary(int n)
+int findMaxByRecursive(int n, vi &arr)
 {
-    string res = "";
-    while (n > 0)
-    {
-        res = to_string(n % 2) + res;
-        n /= 2;
-    }
-    return stoi(res);
+    if (n == 1)
+        return arr[0];
+
+    return max(arr[n - 1], findMaxByRecursive(n - 1, arr));
 }
 
-void Sokan_El_Leil()
+inline void Sokan_El_Leil()
 {
     int n;
     cin >> n;
-    int cnt = 0;
-    // loop over every number to convert it to binary
-    for (int i = 1; i <= n; i++)
-    {
-        int num = ConvertToBinary(i);
+    vi arr(n);
+    cin >> arr;
 
-        if (num <= n)
-        {
-            cnt++;
-            continue;
-        }
-        else
-        {
-            break;
-        }
-    }
+    // sort(all(arr));
+    // cout << *max_element(all(arr));
 
-    cout << cnt << "\n";
+    cout << findMaxByRecursive(n, arr);
 }
 
 int32_t main()

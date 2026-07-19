@@ -1,3 +1,15 @@
+/*
+___________________________________________________________________________________________________
+                             بِسْمِ اللَّـهِ الرَّحْمَـ ٰنِ الرَّحِيمِ
+___________________________________________________________________________________________________
+                                     Author Atwaa
+___________________________________________________________________________________________________
+
+Time : O( )
+Space : O( )
+___________________________________________________________________________________________________
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,20 +37,16 @@ istream &operator>>(istream &is, vector<T> &v)
     return is;
 }
 
-#define str   \
-    string s; \
-    cin >> s;
-
-#define F first
-#define S second
-#define PB push_back
-#define MP make_pair
 #define ull unsigned long long
 #define ll long long
+#define int ll
 #define vi vector<ll>
 #define vvi vector<vi>
-#define pri pair<int, int>
-#define prl pair<ll, ll>
+// ==================
+// 2D array
+// vector<vector<int>> arr(rows, vector<int>(cols));
+// vvi arr(n, vi(m));
+// ==================
 
 #define ln "\n";
 #define no cout << "NO\n";
@@ -56,19 +64,23 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-void recursive(int n ) {
-    if(n <=  0 ) return;
-    recursive(n-1);
-    cout << n << "\n";
+int n3(int n)
+{
+    if (n == 1)
+        return 1;
+
+    if (n % 2 == 0)
+        return 1 + n3(n / 2);
+    else
+        return 1 + n3(n * 3 + 1);
 }
 
-
-
-void Sokan_El_Leil()
+inline void Sokan_El_Leil()
 {
-    int n ;
-    cin >> n ;
-    recursive(n);
+    int n;
+    cin >> n;
+
+    cout << n3(n);
 }
 
 int32_t main()
