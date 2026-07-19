@@ -64,25 +64,22 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e7;
 
-int findMaxByRecursive(int n, vi &arr)
+int sum(int n, int m, vi &arr)
 {
-    if (n == 1)
-        return arr[0];
+    if (m == 0)
+        return 0;
 
-    return max(arr[n - 1], findMaxByRecursive(n - 1, arr));
+    return arr[n] + sum(n - 1, m - 1, arr);
 }
 
 inline void Sokan_El_Leil()
 {
-    int n;
-    cin >> n;
+    int n, m;
+    cin >> n >> m;
     vi arr(n);
     cin >> arr;
 
-    // sort(all(arr));
-    // cout << *max_element(all(arr));
-
-    cout << findMaxByRecursive(n, arr);
+    cout << sum(n - 1, m, arr);
 }
 
 int32_t main()
