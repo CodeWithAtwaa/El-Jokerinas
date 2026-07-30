@@ -73,6 +73,7 @@ istream &operator>>(istream &is, vector<T> &v)
     cin.tie(nullptr);
 
 const int MOD = 1e7;
+
 void Sokan_El_Leil()
 {
     string n, m;
@@ -80,27 +81,51 @@ void Sokan_El_Leil()
 
     vector<int> sheet(26), gar(26);
 
-    for (char c : n)
-        sheet[c - 'a']++;
+    // for (char c : n)
+    //     sheet[c - 'a']++;
 
-    for (char c : m)
-        gar[c - 'a']++;
+    // for (char c : m)
+    //     gar[c - 'a']++;
 
-    int ans = 0;
+    // int ans = 0;
 
-    for (int i = 0; i < 26; i++)
-    {
-        if (gar[i] > 0 && sheet[i] == 0)
-        {
-            cout << -1;
-            return;
-        }
+    // for (int i = 0; i < 26; i++)
+    // {
+    //     if (gar[i] > 0 && sheet[i] == 0)
+    //     {
+    //         cout << -1;
+    //         return;
+    //     }
 
-        ans += min(sheet[i], gar[i]);
+    //     ans += min(sheet[i], gar[i]);
+    // }
+
+    // cout << ans;
+
+    int cnt = 0, l = 0 , r = 0;;
+    sort(all(n));
+    sort(all(m));
+
+    while(r < m.size() && l < n.size()) {
+        if(m[r] == n[l]) cnt++,l++,r++;
+        else if(n[l] < m[r])l++;
+        else r++;
     }
 
-    cout << ans;
+    bool flag = true;
+    for(char it : m) {
+         if (n.find(it) == string::npos)
+        {
+            flag = false;
+            break;
+        }
+    }
+
+    cout << (!flag? -1 : cnt);
+    cout << "\n";
 }
+
+
 int32_t main()
 {
     ios;
