@@ -68,10 +68,23 @@ inline void  Sokan_El_Leil()
 {
     int n ;
     cin >> n;
-    string s;
-    cin >> s;
-    sort(all(s));
-    cout << s << ln;
+    // string s;
+    // cin >> s;
+   map<char,int> mp;
+   char ch;
+    for(int i = 0 ; i < n ; i++)
+    {
+        cin >> ch;
+        mp[ch]++;
+    }
+
+    for(auto it : mp)
+    {
+        for(int i = 0 ; i < it.second ; i++)
+        {
+            cout << it.first ;
+        }
+    }
 }
 
 int32_t main()
