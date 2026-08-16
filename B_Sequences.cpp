@@ -66,25 +66,17 @@ const int MOD = 1e7;
 
 void Sokan_El_Leil()
 {
-   long long k;
-    cin >> k;
 
-    long long digits = 1;
-    long long count = 9;
-    long long start = 1;
+    int k;
+    cin >> k ;
+    string s = "" ;
+    int cnt = 1;
 
-    while (k > digits * count) {
-        k -= digits * count;
-        digits++;
-        count *= 10;
-        start *= 10;
+    while(s.size() < k) {
+        s += to_string(cnt++);
     }
 
-    long long number = start + (k - 1) / digits;
-    string s = to_string(number);
-
-    cout << s[(k - 1) % digits] << endl;
-
+    cout << s[k-1] <<"\n";
 }
 
 int32_t main()
