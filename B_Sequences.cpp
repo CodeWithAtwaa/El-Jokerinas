@@ -73,7 +73,7 @@ void Sokan_El_Leil()
     int cnt = 1;
 
     while(s.size() < k) {
-        s += to_string(cnt++);
+        s += to_exi=string(cnt++);
     }
 
     cout << s[k-1] <<"\n";
