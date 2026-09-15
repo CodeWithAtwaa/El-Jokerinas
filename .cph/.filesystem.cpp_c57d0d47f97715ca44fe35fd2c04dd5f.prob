@@ -1,0 +1,1 @@
+{"name":"Local: filesystem","url":"/home/atwaa/ElJokrians/filesystem.cpp","tests":[{"id":1788156090618,"input":"5","output":"120"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/atwaa/ElJokrians/filesystem.cpp","group":"local","local":true}
