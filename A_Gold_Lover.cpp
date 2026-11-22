@@ -61,29 +61,25 @@ void Sokan_El_Leil()
     int n, k;
     cin >> n >> k;
 
-    int gold = 0, light = k;
-    for (int i = 0; i < n; i++)
+    int g = 0, l = k;
+    rep(i, 0, n)
     {
         char ch;
         cin >> ch;
 
+        if (l == 0)
+            break;
         if (ch == 'G')
         {
-            if (light == 0)
-                break;;
-
-            gold++;
-            light--;
-            if (light == 0)
-                break;;
+            g++;
+            l--;
         }
         else
         {
-            light++;
+            l++;
         }
     }
-
-    cout << gold << endl;
+    cout << g <<"\n";
 }
 
 int main()
