@@ -37,6 +37,20 @@ istream &operator>>(istream &is, vector<T> &v)
     return is;
 }
 
+
+void dbg_out() { cerr << endl; }
+template<typename Head, typename... Tail>
+void dbg_out(Head H, Tail... T) {
+    cerr << ' ' << H;
+    dbg_out(T...);
+}
+#ifndef ONLINE_JUDGE
+#define dbg(...) cerr << '[' << __FILE__ << ':' << __LINE__ << "] (" << #__VA_ARGS__ << "):", dbg_out(__VA_ARGS__)
+#else
+#define dbg(...)
+#endif
+
+
 #define ull unsigned long long
 #define ll long long
 #define int ll

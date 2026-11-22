@@ -61,27 +61,31 @@ void Sokan_El_Leil()
     int n, k;
     cin >> n >> k;
     int cnt = 0;
-    while (n--)
+
+    rep(i, 0, n)
     {
         string s;
         cin >> s;
+        if(s.size() < k+1) continue;
+        bool flag = true;
 
-        vector<bool> seen(10 , false);
-        for(auto ch : s) {
-            seen[ch-'0'] = true;
-        }   
 
-        bool ok = true;
-        for(int i= 0 ; i <= k  ;i++) {
-            if(!seen[i]) {
-                ok = false;
+        set<int> st;
+        for(auto it : s) st.insert(it -'0');
+
+        for(int i = 0 ; i <= k ;i++ ) {
+            if(st.find(i) == st.end() ) {
+                flag = false;
                 break;
             }
-        }   
 
-        if(ok) cnt++;
+            
+        }
+
+        if (flag)
+            cnt++;
     }
-    cout << cnt << endl;
+    cout << cnt << "\n";
 }
 
 int main()

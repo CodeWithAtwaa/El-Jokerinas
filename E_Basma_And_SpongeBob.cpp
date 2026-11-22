@@ -44,6 +44,18 @@ istream &operator>>(istream &is, vector<T> &v)
 #define no cout << "NO\n";
 #define yes cout << "YES\n";
 
+void dbg_out() { cerr << endl; }
+template<typename Head, typename... Tail>
+void dbg_out(Head H, Tail... T) {
+    cerr << ' ' << H;
+    dbg_out(T...);
+}
+#ifndef ONLINE_JUDGE
+#define dbg(...) cerr << '[' << __FILE__ << ':' << __LINE__ << "] (" << #__VA_ARGS__ << "):", dbg_out(__VA_ARGS__)
+#else
+#define dbg(...)
+#endif
+
 #define dd     \
     int n;     \
     cin >> n;  \
@@ -65,28 +77,15 @@ void Sokan_El_Leil()
     {
         mp[ch]++;
     }
-    int mx = INT_MIN;
-    int mn = INT_MAX;
 
-    char mxchar = 'a', mnchar = 'z';
-    for (auto &p : mp)
-    {
-        char ch = p.first;
-        int freq = p.second;
-        
-        if (freq < mn || (freq == mn && ch < mnchar))
-        {
-            mn = freq;
-            mnchar = ch;
-        }
+    vector<pair<char, int>> arr(mp.begin(), mp.end());
+    sort(all(arr), [](const auto &a, const auto &b)
+         { 
+            if(a.second != b.second) return a.second < b.second;
+            return a.first < b.first; 
+          });
 
-        if (freq > mx || (freq == mx && ch > mxchar))
-        {
-            mx = freq;
-            mxchar = ch;
-        }
-    }
-    cout << mnchar << " " << mxchar << endl;
+    cout << arr.front().first << " " << arr.back().first << "\n";
 }
 
 int main()
