@@ -29,7 +29,7 @@ istream &operator>>(istream &is, vector<T> &v)
     string s; \
     cin >> s;
 
-#define F first
+#define F flag
 #define S second
 #define PB push_back
 #define MP make_pair
@@ -60,7 +60,33 @@ void Sokan_El_Leil()
 {
     string s;
     cin >> s;
+    int n = s.length();
+    if (n == 1)
+    {
+        cout << s << "\n";
+        return;
+    }
 
+    string ans = s;
+    bool flag = true;
+
+    for (int i = 1; i < n; i++)
+    {
+        string x = s.substr(0, i);
+        string y = s.substr(i);
+
+        sort(all(x));
+        sort(all(y));
+
+        string aha = x + y;
+        if (flag || aha < ans)
+        {
+            ans = aha;
+            flag = false;
+        }
+    }
+
+    cout << ans << "\n";
 }
 
 int main()

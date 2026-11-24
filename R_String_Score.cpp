@@ -56,10 +56,13 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e6 + 5;
 
-
 void Sokan_El_Leil()
 {
+    string s;
+    cin >> s;
 
+    int sum = 0;
+    
 }
 
 int main()
@@ -73,7 +76,3 @@ int main()
         Sokan_El_Leil();
     }
 }
-
-
-
-
