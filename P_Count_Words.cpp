@@ -56,13 +56,28 @@ istream &operator>>(istream &is, vector<T> &v)
 
 const int MOD = 1e6 + 5;
 
-
 void Sokan_El_Leil()
 {
     string s;
-    getline(cin , s);
+    getline(cin, s);
 
-    
+    stringstream ss(s);
+    string w;
+
+    vector<string> arr;
+    while (ss >> w)
+    {
+        string clean = "";
+        for (char c : w)
+        {
+            if (isalpha(static_cast<unsigned char>(c)))
+                clean += c;
+        }
+        if (!clean.empty())
+            arr.push_back(clean);
+    }
+    cout << arr << "\n";
+    cout << arr.size() << "\n";
 }
 
 int main()
@@ -76,7 +91,3 @@ int main()
         Sokan_El_Leil();
     }
 }
-
-
-
-
