@@ -37,10 +37,10 @@ istream &operator>>(istream &is, vector<T> &v)
     return is;
 }
 
-
 void dbg_out() { cerr << endl; }
-template<typename Head, typename... Tail>
-void dbg_out(Head H, Tail... T) {
+template <typename Head, typename... Tail>
+void dbg_out(Head H, Tail... T)
+{
     cerr << ' ' << H;
     dbg_out(T...);
 }
@@ -49,7 +49,6 @@ void dbg_out(Head H, Tail... T) {
 #else
 #define dbg(...)
 #endif
-
 
 #define ull unsigned long long
 #define ll long long
@@ -78,8 +77,23 @@ void dbg_out(Head H, Tail... T) {
 
 const int MOD = 1e7;
 
-inline void  Sokan_El_Leil()
+inline void Sokan_El_Leil()
 {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+
+    stack<char> st;
+st.push(s[0]);
+    for (int i = 1 ; i< s.size() ;i++)
+    {
+        if (st.empty() || st.top() != s[i])
+        {
+            st.push(s[i]);
+        }
+    }
+    cout << st.size() << "\n";
 }
 
 int32_t main()

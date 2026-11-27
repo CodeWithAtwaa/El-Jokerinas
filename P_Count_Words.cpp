@@ -61,24 +61,27 @@ void Sokan_El_Leil()
     string s;
     getline(cin, s);
 
-    stringstream ss(s);
-    string w;
+    int count = 0;
+    bool in_word = false;
 
-    vector<string> arr;
-    while (ss >> w)
+    for (char c : s)
     {
-        string clean = "";
-        for (char c : w)
+        if (isalpha(static_cast<unsigned char>(c)))
         {
-            if (isalpha(static_cast<unsigned char>(c)))
-                clean += c;
+            if (!in_word)
+            {
+                count++;
+                in_word = true;
+            }
         }
-        if (!clean.empty())
-            arr.push_back(clean);
+        else
+        {
+            in_word = false;
+        }
     }
-    cout << arr << "\n";
-    cout << arr.size() << "\n";
+    cout << count << "\n";
 }
+
 
 int main()
 {
